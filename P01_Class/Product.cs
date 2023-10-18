@@ -12,13 +12,6 @@
         //set ใส่ค่า
         
         //=> Lamda, Arrow Function
-        public void Display() => Console.WriteLine($"Id => {Id} \nName => {Name} \nPrice => {Price} \nAmount => {Amount} \n");
-        public void Input(Product product)
-        {
-            Id = product.Id;
-            Name = product.Name;
-            Price = product.Price;
-            Amount = product.Amount;
-        }
+        public void Display() => Console.WriteLine($"Id => {Id} \nName => {Name} \nPrice => {Price.ToString("###.##")} \nAmount => {Amount} \n");
     }
 }

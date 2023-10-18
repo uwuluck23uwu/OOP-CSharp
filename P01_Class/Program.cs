@@ -1,14 +1,18 @@
 ﻿using P01_Class;
+Random r = new Random();
 
-//Object วัตถุ
-Product product = new Product();
-Product ton = new Product();
-Product sumo = new Product();
+//List ไม่จำกัดจำนวน
+List<Product> products = new List<Product>();
 
-product.Input(new Product { Id = 1, Name = "Coffe", Price = 100, Amount = 10 });
-ton.Input(new Product { Id = 2, Name = "Ton", Price = 10000, Amount = 1 });
-sumo.Input(new Product { Id = 3, Name = "Sumo", Price = 10000, Amount = 1 });
+for (int i = 0; i < 10; i++)
+{
+    products.Add(new Product 
+    {
+        Id = i+1, 
+        Name = "Coffee"+(i+1), 
+        Price = r.NextDouble() * 990 + 10, 
+        Amount = r.Next(10,50) 
+    });
+}
 
-product.Display();
-ton.Display();
-sumo.Display();
+products.ForEach(p => p.Display());
