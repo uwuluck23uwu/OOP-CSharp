@@ -7,9 +7,11 @@
         public string Name { get; set; }
         public double Price { get; set; }
         public int Amount { get; set; }
-
         //Default Method get set
         //get อ่านค่า
         //set ใส่ค่า
+        
+        //=> Lamda, Arrow Function
+        public void Display() => Console.WriteLine($"Id => {Id} \nName => {Name} \nPrice => {Price} \nAmount => {Amount} \n");
     }
 }

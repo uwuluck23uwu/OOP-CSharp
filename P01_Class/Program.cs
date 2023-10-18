@@ -20,12 +20,6 @@ sumo.Name = "Sumo";
 sumo.Price = 10000;
 sumo.Amount = 1;
 
-//Reuse ใช้ซ้ำ
-Display(product);
-Display(ton);
-Display(sumo);
-
-void Display(Product p)
-{
-    Console.WriteLine($"Id => {p.Id} \nName => {p.Name} \nPrice => {p.Price} \nAmount => {p.Amount} \n");
-}
+product.Display();
+ton.Display();
+sumo.Display();
