@@ -1,4 +1,4 @@
-﻿namespace PO3_Encapsulate
+﻿namespace P03_Encapsulate
 {
     public class BankAccount
     {

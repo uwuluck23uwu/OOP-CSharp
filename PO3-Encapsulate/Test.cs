@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using P03_Encapsulate;
 
-namespace PO3_Encapsulate
+namespace PO3_Test
 {
-    internal class Test
+    //การเรียกใช้ internal ในโปรเจคเดียวกันสามารถทำได้
+    public class Test
     {
+        //Contructor
+        public Test()
+        {
+            var test = new BankAccount();
+
+            //internal
+            test.Rate = 100;
+        }
     }
 }
