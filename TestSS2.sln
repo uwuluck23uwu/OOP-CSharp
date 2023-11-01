@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSS2", "TestSS2\TestSS2.csproj", "{9DA578B7-8555-46AD-83E3-DF98B1E16133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_Class", "P01_Class\P01_Class.csproj", "{724D1188-724D-469E-8350-64085403A4FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_Class", "P01_Class\P01_Class.csproj", "{724D1188-724D-469E-8350-64085403A4FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PO3-Encapsulate", "PO3-Encapsulate\PO3-Encapsulate.csproj", "{09AEF722-46F8-4465-93C6-62AE9CC1F652}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{724D1188-724D-469E-8350-64085403A4FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{724D1188-724D-469E-8350-64085403A4FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{724D1188-724D-469E-8350-64085403A4FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09AEF722-46F8-4465-93C6-62AE9CC1F652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09AEF722-46F8-4465-93C6-62AE9CC1F652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09AEF722-46F8-4465-93C6-62AE9CC1F652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09AEF722-46F8-4465-93C6-62AE9CC1F652}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
