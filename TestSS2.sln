@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_Class", "P01_Class\P01_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03_Encapsulate", "PO3-Encapsulate\P03_Encapsulate.csproj", "{09AEF722-46F8-4465-93C6-62AE9CC1F652}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_01_TestInternal", "P03_01_TestInternal\P03_01_TestInternal.csproj", "{0C834CEA-0FAB-43E8-892D-E5EEC1B1996F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03_01_TestInternal", "P03_01_TestInternal\P03_01_TestInternal.csproj", "{0C834CEA-0FAB-43E8-892D-E5EEC1B1996F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise02_P55T3", "Exercise02_P55T3\Exercise02_P55T3.csproj", "{5B504BB8-7786-4D52-BEF5-4D956640BD14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0C834CEA-0FAB-43E8-892D-E5EEC1B1996F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C834CEA-0FAB-43E8-892D-E5EEC1B1996F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C834CEA-0FAB-43E8-892D-E5EEC1B1996F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B504BB8-7786-4D52-BEF5-4D956640BD14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B504BB8-7786-4D52-BEF5-4D956640BD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B504BB8-7786-4D52-BEF5-4D956640BD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B504BB8-7786-4D52-BEF5-4D956640BD14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
