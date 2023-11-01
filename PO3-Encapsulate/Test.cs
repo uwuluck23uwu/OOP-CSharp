@@ -1,6 +1,6 @@
 ﻿using P03_Encapsulate;
 
-namespace PO3_Test
+namespace P03_Test
 {
     //การเรียกใช้ internal ในโปรเจคเดียวกันสามารถทำได้
     public class Test
