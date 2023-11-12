@@ -40,5 +40,32 @@ namespace Exercise02_P55T3
             }
             return name;
         }
+        public void DisplayByGroupAge()
+        {
+            Console.Write("        department \n\n Age  ");
+            for (int i = 1; i <= 5; i++) Console.Write($"| {i} ");
+            Console.Write($"|");
+            foreach (var group in GenerateData.GroupOfAge())
+            {
+                Console.Write($" \n{NameOfAge(group.Key)} ");
+                for (int i = 1; i <= 5; i++)
+                {
+                    Console.Write($"| {group.Count(p => p.Section == i)} ");
+                }
+                Console.Write("|");
+            };
+        }
+        public string NameOfAge(int age)
+        {
+            string name = string.Empty;
+            switch (age)
+            {
+                case 1: name = "25-30"; break;
+                case 2: name = "31-40"; break;
+                case 3: name = "41-50"; break;
+                case 4: name = "51-60"; break;
+            }
+            return name;
+        }
     }
 }
