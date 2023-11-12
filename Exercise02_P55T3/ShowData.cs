@@ -42,18 +42,18 @@ namespace Exercise02_P55T3
         }
         public void DisplayByGroupAge()
         {
-            Console.Write("        department \n\n Age  ");
+            Console.Write("        department \n=========================== \n Age  ");
             for (int i = 1; i <= 5; i++) Console.Write($"| {i} ");
-            Console.Write($"|");
+            Console.Write($"| \n===========================");
             foreach (var group in GenerateData.GroupOfAge())
             {
-                Console.Write($" \n{NameOfAge(group.Key)} ");
+                Console.Write($"\n{NameOfAge(group.Key)} |");
                 for (int i = 1; i <= 5; i++)
                 {
-                    Console.Write($"| {group.Count(p => p.Section == i)} ");
+                    Console.Write($" {group.Count(p => p.Section == i)} |");
                 }
-                Console.Write("|");
             };
+            Console.Write("\n===========================");
         }
         public string NameOfAge(int age)
         {
