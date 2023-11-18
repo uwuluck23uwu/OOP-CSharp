@@ -17,6 +17,7 @@
                     Id = i,
                     Name = "Coffe-" + i,
                     Price = random.Next(10, 200),
+                    Category = random.Next(1, 6),
                 });
             }
         }
@@ -44,7 +45,7 @@
                     <= 200 => 2,
                     _ => 3,
                 };
-                temp.Add(new TempGroup { group = tempGr });
+                temp.Add(new TempGroup { group = tempGr, category = item.Category });
             }
             return temp;
         }
@@ -53,7 +54,12 @@
             var numOfGroup = GroupByPrice().GroupBy(p => p.group);
             foreach (var item in numOfGroup)
             {
-                Console.WriteLine($"{NameOfPrice(item.Key),8} {GroupByPrice().Count(p => p.group == item.Key)}");
+                Console.Write($"{NameOfPrice(item.Key),8}");
+                for (int i = 1; i <= 5; i++)
+                {
+                    Console.Write($"| {item.Count(p => p.category.Equals(i)),5}     ");
+                }
+                Console.WriteLine();
             }
         }
         public string NameOfPrice(int price)
@@ -69,5 +75,6 @@
     public class TempGroup
     {
         public int group { get; set; }
+        public int category { get; set; }
     }
 }
