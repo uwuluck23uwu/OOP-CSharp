@@ -28,5 +28,15 @@
             //แบบย่อ
             return Products.Find(p => p.Id.Equals(productId));
         }
+
+        public List<Product> GetProductByAny(int number = 0, string keyword = "")
+        {
+            if (String.IsNullOrEmpty(keyword)) keyword = "XXX";
+            var result = Products.Where(p => p.Name.ToLower().Contains(keyword) || 
+            p.Id.Equals(number) || 
+            p.Price >= number || 
+            p.Category.Equals(number)).ToList();
+            return result;
+        }
     }
 }

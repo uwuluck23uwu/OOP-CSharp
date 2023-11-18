@@ -15,7 +15,7 @@
                 ProductManagement.AddProcuct(new Product
                 {
                     Id = i,
-                    Name = "Coffe-" + i,
+                    Name = "coffe-" + i,
                     Price = random.Next(10, 200),
                     Category = random.Next(1, 6),
                 });
@@ -76,8 +76,23 @@
             Console.Write("Enter Id : ");
             var id = int.Parse(Console.ReadLine());
             var result = ProductManagement.GetProductById(id);
-            if (result == null) { Console.WriteLine("Not found",5); }
-            else { Console.WriteLine($"{result.Id,5} {result.Name,5} {result.Price,5} {result.Category,5}"); }
+            if (result == null) { Console.WriteLine("Not found"); }
+            else { Console.WriteLine($"{result.Id,5} {result.Name,-10} {result.Price,5} {result.Category,5}"); }
+        }
+        public void SearchByAny()
+        {
+            Console.Write("Enter number : ");
+            var number = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter keyword : ");
+            var keyword = Console.ReadLine();
+
+            var result = ProductManagement.GetProductByAny(number, keyword);
+            if (result.Count == 0) { Console.WriteLine("Not found"); }
+            else 
+            {
+                result.ForEach(x => Console.WriteLine($"{x.Id,5} {x.Name,-10} {x.Price,5} {x.Category,5}"));
+            }
         }
     }
     public class TempGroup
