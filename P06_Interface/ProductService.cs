@@ -85,14 +85,8 @@
             var id = int.Parse(Console.ReadLine());
 
             var result = ProductManagement.GetProductById(id);
-            if (result == null) 
-            {
-                Console.WriteLine("Not found");
-            }
-            else
-            {
-                Console.WriteLine($"{result.Id,5} {result.Name,-10} {result.Price,5} {result.Category,5}");
-            }
+            if (result == null) { Console.WriteLine("Not found"); }
+            else { Console.WriteLine($"{result.Id,5} {result.Name,-10} {result.Price,5} {result.Category,5}"); }
             return result;
         }
         
@@ -106,10 +100,7 @@
 
             var result = ProductManagement.GetProductByAny(number, keyword);
             if (result.Count == 0) { Console.WriteLine("Not found"); }
-            else 
-            {
-                result.ForEach(x => Console.WriteLine($"{x.Id,5} {x.Name,-10} {x.Price,5} {x.Category,5}"));
-            }
+            else { result.ForEach(x => Console.WriteLine($"{x.Id,5} {x.Name,-10} {x.Price,5} {x.Category,5}")); }
         }
         
         public void DeleteProductById()
@@ -120,7 +111,18 @@
             Console.WriteLine();
             DisplayProduct();
         }
+
+        public void UpdateProductService()
+        {
+        UpdateProductService:
+            var result = SearchProduct();
+            if (result == null) { goto UpdateProductService; }
+            var newProduct = ProductManagement.InputProduct(result);
+            ProductManagement.UpdateProduct(newProduct, result);
+            DisplayProduct();
+        }
     }
+    
     public class TempGroup
     {
         public int group { get; set; }

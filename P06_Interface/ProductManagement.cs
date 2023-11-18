@@ -3,10 +3,12 @@
     public class ProductManagement : IProductManagement
     {
         public List<Product> Products { get; set; }
+        public Product Product { get; set; }
 
         public ProductManagement()
         {
             Products = new List<Product>();
+            Product = new Product();
         }
 
         public void AddProcuct(Product product)
@@ -32,7 +34,7 @@
         public List<Product> GetProductByAny(int number = 0, string keyword = "")
         {
             if (String.IsNullOrEmpty(keyword)) keyword = "XXX";
-            var result = Products.Where(p => p.Name.ToLower().Contains(keyword) || 
+            var result = Products.Where(p => p.Name.ToLower().Contains(keyword.ToLower()) || 
             p.Id.Equals(number) || 
             p.Price >= number || 
             p.Category.Equals(number)).ToList();
@@ -43,6 +45,29 @@
         {
             if (product == null) return;
             Products.Remove(product);
+        }
+
+        public void UpdateProduct(Product NewProduct, Product OldProduct)
+        {
+            var index = Products.IndexOf(OldProduct);
+            Products.RemoveAt(index);
+            Products.Insert(index, NewProduct);
+        }
+
+        public Product InputProduct(Product product)
+        {
+            Console.WriteLine("Product Id : " + product.Id);
+
+            Console.Write("Input Name : ");
+            product.Name = Console.ReadLine();
+
+            Console.Write("Input Price : ");
+            product.Price = double.Parse(Console.ReadLine());
+
+            Console.Write("Input Category : ");
+            product.Category = int.Parse(Console.ReadLine());
+
+            return product;
         }
     }
 }

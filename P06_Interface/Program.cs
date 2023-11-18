@@ -8,4 +8,5 @@ ps.DisplayProduct();
 //ps.DisplayGroupByPrice();
 //ps.SearchProduct();
 //ps.SearchByAny();
-ps.DeleteProductById();
+//ps.DeleteProductById();
+ps.UpdateProductService();
