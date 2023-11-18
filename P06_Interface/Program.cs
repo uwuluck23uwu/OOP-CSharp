@@ -7,4 +7,5 @@ ps.DisplayProduct();
 //Console.WriteLine();
 //ps.DisplayGroupByPrice();
 //ps.SearchProduct();
-ps.SearchByAny();
+//ps.SearchByAny();
+ps.DeleteProductById();

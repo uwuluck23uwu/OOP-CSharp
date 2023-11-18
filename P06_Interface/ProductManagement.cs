@@ -38,5 +38,11 @@
             p.Category.Equals(number)).ToList();
             return result;
         }
+
+        public void DeleteById(Product product)
+        {
+            if (product == null) return;
+            Products.Remove(product);
+        }
     }
 }

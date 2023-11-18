@@ -3,10 +3,12 @@
     public class ProductService
     {
         public ProductManagement ProductManagement { get; set; }
+
         public ProductService()
         {
             ProductManagement = new ProductManagement();
         }
+
         public void GenerateProduct(int number = 1)
         {
             Random random = new Random();
@@ -21,6 +23,7 @@
                 });
             }
         }
+        
         public void DisplayProduct()
         {
             foreach (var item in ProductManagement.GetProducts())
@@ -28,11 +31,13 @@
                 Console.WriteLine($"{item.Id,5} {item.Name,-10} {item.Price,5} {item.Category,5}");
             }
         }
+        
         public List<Product> OrderByPrice()
         {
             var sort = ProductManagement.Products.OrderBy(x => x.Price).ToList();
             return sort;
         }
+        
         public List<TempGroup> GroupByPrice()
         {
             var temp = new List<TempGroup>();
@@ -49,6 +54,7 @@
             }
             return temp;
         }
+        
         public void DisplayGroupByPrice()
         {
             var numOfGroup = GroupByPrice().GroupBy(p => p.group);
@@ -62,6 +68,7 @@
                 Console.WriteLine("|");
             }
         }
+        
         private string NameOfPrice(int price)
         {
             return price switch
@@ -71,14 +78,24 @@
                 _ => " ",
             };
         }
-        public void SearchProduct()
+        
+        public Product SearchProduct()
         {
             Console.Write("Enter Id : ");
             var id = int.Parse(Console.ReadLine());
+
             var result = ProductManagement.GetProductById(id);
-            if (result == null) { Console.WriteLine("Not found"); }
-            else { Console.WriteLine($"{result.Id,5} {result.Name,-10} {result.Price,5} {result.Category,5}"); }
+            if (result == null) 
+            {
+                Console.WriteLine("Not found");
+            }
+            else
+            {
+                Console.WriteLine($"{result.Id,5} {result.Name,-10} {result.Price,5} {result.Category,5}");
+            }
+            return result;
         }
+        
         public void SearchByAny()
         {
             Console.Write("Enter number : ");
@@ -93,6 +110,15 @@
             {
                 result.ForEach(x => Console.WriteLine($"{x.Id,5} {x.Name,-10} {x.Price,5} {x.Category,5}"));
             }
+        }
+        
+        public void DeleteProductById()
+        {
+            var result = SearchProduct();
+            if (result == null) return;
+            ProductManagement.DeleteById(result);
+            Console.WriteLine();
+            DisplayProduct();
         }
     }
     public class TempGroup
