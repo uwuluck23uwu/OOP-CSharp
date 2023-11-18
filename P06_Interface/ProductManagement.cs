@@ -18,5 +18,15 @@
         {
             return Products;
         }
+
+        public Product GetProductById(int productId)
+        {
+            //แบบเต็ม
+            //  Products.Where(p => p.Id == productId).FirstOrDefault();
+            //แบบหาอันเดี่ยว
+            //  Products.FirstOrDefault(p => p.Id == productId);
+            //แบบย่อ
+            return Products.Find(p => p.Id.Equals(productId));
+        }
     }
 }

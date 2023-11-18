@@ -25,7 +25,7 @@
         {
             foreach (var item in ProductManagement.GetProducts())
             {
-                Console.WriteLine($"{item.Id,5} {item.Name,-10} {item.Price,5}");
+                Console.WriteLine($"{item.Id,5} {item.Name,-10} {item.Price,5} {item.Category,5}");
             }
         }
         public List<Product> OrderByPrice()
@@ -59,10 +59,10 @@
                 {
                     Console.Write($"| {item.Count(p => p.category.Equals(i)),5}     ");
                 }
-                Console.WriteLine();
+                Console.WriteLine("|");
             }
         }
-        public string NameOfPrice(int price)
+        private string NameOfPrice(int price)
         {
             return price switch
             {
@@ -70,6 +70,14 @@
                 2 => "101-200",
                 _ => " ",
             };
+        }
+        public void SearchProduct()
+        {
+            Console.Write("Enter Id : ");
+            var id = int.Parse(Console.ReadLine());
+            var result = ProductManagement.GetProductById(id);
+            if (result == null) { Console.WriteLine("Not found",5); }
+            else { Console.WriteLine($"{result.Id,5} {result.Name,5} {result.Price,5} {result.Category,5}"); }
         }
     }
     public class TempGroup
