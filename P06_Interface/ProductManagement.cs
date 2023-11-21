@@ -3,12 +3,10 @@
     public class ProductManagement : IProductManagement
     {
         public List<Product> Products { get; set; }
-        public Product Product { get; set; }
 
         public ProductManagement()
         {
             Products = new List<Product>();
-            Product = new Product();
         }
 
         public void AddProcuct(Product product)
@@ -50,7 +48,7 @@
         public void UpdateProduct(Product NewProduct, Product OldProduct)
         {
             var index = Products.IndexOf(OldProduct);
-            Products.RemoveAt(index);
+            Products.Remove(OldProduct);
             Products.Insert(index, NewProduct);
         }
 
